@@ -25,7 +25,6 @@ const $$ = (sel, ctx = document) => ctx.querySelectorAll(sel);
     navToggle.addEventListener('click', () => {
       const isOpen = navMobile.classList.toggle('open');
       navToggle.classList.toggle('open', isOpen);
-      // Acessibilidade: atualiza aria
       navToggle.setAttribute('aria-expanded', isOpen);
     });
 
