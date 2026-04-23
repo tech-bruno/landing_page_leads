@@ -1,33 +1,20 @@
-/* ================================================================
-   LEGADO CONSTRUÍDO — Landing Page
-   style.css
-   Estética: Luxo refinado (preto profundo + dourado + branco cremoso)
-   ================================================================ */
-
-
-/* ----------------------------------------------------------------
-   1. VARIÁVEIS & RESET
----------------------------------------------------------------- */
 :root {
-  /* Paleta de cores principal */
-  --color-bg:         #0a0a0f;       /* preto quase total */
-  --color-bg-2:       #111118;       /* levemente mais claro */
-  --color-bg-3:       #16161f;       /* cards e seções */
-  --color-surface:    #1c1c28;       /* superfície de cards */
-  --color-gold:       #c9a84c;       /* dourado principal */
-  --color-gold-light: #e0c070;       /* dourado claro (hover) */
-  --color-gold-dim:   #8a6a2a;       /* dourado escuro */
-  --color-text:       #f0ece4;       /* texto principal (creme) */
-  --color-text-muted: #9590a0;       /* texto secundário */
-  --color-text-faint: #5a5568;       /* texto muito suave */
-  --color-border:     rgba(201,168,76,0.15);  /* borda dourada sutil */
+  --color-bg:         #0a0a0f;     
+  --color-bg-2:       #111118;       
+  --color-bg-3:       #16161f;       
+  --color-surface:    #1c1c28;       
+  --color-gold:       #c9a84c;     
+  --color-gold-light: #e0c070;       
+  --color-gold-dim:   #8a6a2a;       
+  --color-text:       #f0ece4;      
+  --color-text-muted: #9590a0;       
+  --color-text-faint: #5a5568;       
+  --color-border:     rgba(201,168,76,0.15);  
   --color-white:      #ffffff;
 
-  /* Tipografia */
   --font-display:  'Cormorant Garamond', Georgia, serif;
   --font-body:     'DM Sans', system-ui, sans-serif;
 
-  /* Espaçamentos */
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
@@ -35,23 +22,19 @@
   --space-xl: 4rem;
   --space-2xl: 7rem;
 
-  /* Bordas */
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 20px;
   --radius-full: 999px;
 
-  /* Sombras */
   --shadow-card: 0 4px 32px rgba(0,0,0,0.5);
   --shadow-gold:  0 0 40px rgba(201,168,76,0.12);
   --shadow-glow:  0 0 80px rgba(201,168,76,0.08);
 
-  /* Transições */
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Reset moderno */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -77,7 +60,6 @@ a  { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 button { cursor: pointer; border: none; background: none; font-family: inherit; }
 
-/* Container central */
 .container {
   width: 100%;
   max-width: 1160px;
@@ -85,10 +67,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   padding: 0 var(--space-md);
 }
 
-
-/* ----------------------------------------------------------------
-   2. TIPOGRAFIA GLOBAL
----------------------------------------------------------------- */
 .section-label {
   display: inline-block;
   font-family: var(--font-body);
@@ -129,10 +107,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .section-subtitle.light { color: rgba(255,255,255,0.65); }
 
-
-/* ----------------------------------------------------------------
-   3. BOTÕES
----------------------------------------------------------------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -148,7 +122,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .btn svg { width: 16px; height: 16px; transition: transform var(--transition); }
 .btn:hover svg { transform: translateX(3px); }
 
-/* Botão primário (dourado) */
 .btn-primary {
   background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dim));
   color: #0a0a0f;
@@ -161,7 +134,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   box-shadow: 0 8px 30px rgba(201,168,76,0.35);
 }
 
-/* Botão fantasma */
 .btn-ghost {
   border: 1px solid var(--color-border);
   color: var(--color-text-muted);
@@ -172,17 +144,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: rgba(201,168,76,0.06);
 }
 
-/* Tamanho grande */
 .btn-large {
   font-size: 1.1rem;
   padding: 1rem 2.25rem;
 }
 
-
-/* ----------------------------------------------------------------
-   4. ANIMAÇÕES DE ENTRADA
----------------------------------------------------------------- */
-/* fade-in para hero */
 .fade-in {
   opacity: 0;
   transform: translateY(24px);
@@ -197,7 +163,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* reveal para seções (ativado por JS) */
 .reveal {
   opacity: 0;
   transform: translateY(36px);
@@ -211,10 +176,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .reveal.delay-2.visible { transition-delay: 0.24s; }
 .reveal.delay-3.visible { transition-delay: 0.36s; }
 
-
-/* ----------------------------------------------------------------
-   5. NAVBAR
----------------------------------------------------------------- */
 .navbar {
   position: fixed;
   top: 0;
@@ -223,7 +184,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   z-index: 100;
   transition: background var(--transition), box-shadow var(--transition);
 }
-/* Estado "scrolled" (adicionado por JS) */
 .navbar.scrolled {
   background: rgba(10,10,15,0.92);
   backdrop-filter: blur(16px);
@@ -241,7 +201,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   padding: 0 var(--space-md);
 }
 
-/* Logo */
 .nav-logo {
   display: flex;
   align-items: center;
@@ -254,7 +213,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .logo-icon { color: var(--color-gold); font-size: 1rem; }
 .nav-logo em { font-style: italic; color: var(--color-gold); }
 
-/* Links desktop */
 .nav-links {
   display: flex;
   align-items: center;
@@ -268,7 +226,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .nav-links a:hover { color: var(--color-text); }
 
-/* CTA na navbar */
 .nav-cta {
   background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dim)) !important;
   color: #0a0a0f !important;
@@ -282,7 +239,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   box-shadow: 0 4px 16px rgba(201,168,76,0.3);
 }
 
-/* Toggle hamburger */
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -297,12 +253,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-radius: 2px;
   transition: var(--transition);
 }
-/* Animação do X */
 .nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
 .nav-toggle.open span:nth-child(2) { opacity: 0; }
 .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
 
-/* Menu mobile */
 .nav-mobile {
   display: none;
   background: rgba(10,10,15,0.97);
@@ -321,10 +275,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .nav-mobile a:hover { color: var(--color-gold); }
 
-
-/* ----------------------------------------------------------------
-   6. HERO
----------------------------------------------------------------- */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -334,7 +284,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   overflow: hidden;
 }
 
-/* Camadas de fundo */
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -348,7 +297,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     radial-gradient(ellipse 60% 80% at 80% 80%, rgba(100,60,200,0.05) 0%, transparent 50%),
     linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-2) 100%);
 }
-/* Textura de grão */
 .hero-grain {
   position: absolute;
   inset: 0;
@@ -356,7 +304,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   opacity: 0.4;
   pointer-events: none;
 }
-/* Linhas decorativas */
 .hero-lines {
   position: absolute;
   inset: 0;
@@ -372,7 +319,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   max-width: 780px;
 }
 
-/* Badge */
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -398,7 +344,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   50% { opacity: 0.6; transform: scale(0.8); }
 }
 
-/* Título hero */
 .hero-title {
   font-family: var(--font-display);
   font-size: clamp(2.8rem, 6.5vw, 5.2rem);
@@ -413,7 +358,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--color-gold);
 }
 
-/* Subtítulo hero */
 .hero-subtitle {
   font-size: clamp(1rem, 1.8vw, 1.15rem);
   color: var(--color-text-muted);
@@ -423,7 +367,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .hero-subtitle strong { color: var(--color-text); }
 
-/* Ações do hero */
 .hero-actions {
   display: flex;
   align-items: center;
@@ -432,7 +375,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin-bottom: var(--space-xl);
 }
 
-/* Stats */
 .hero-stats {
   display: flex;
   align-items: center;
@@ -459,7 +401,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: var(--color-border);
 }
 
-/* Seta de scroll */
 .scroll-arrow {
   position: absolute;
   bottom: 2rem;
@@ -475,10 +416,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   50% { transform: translateX(-50%) translateY(8px); }
 }
 
-
-/* ----------------------------------------------------------------
-   7. SOBRE O MÉTODO
----------------------------------------------------------------- */
 .sobre {
   padding: var(--space-2xl) 0;
   background: var(--color-bg-2);
@@ -499,7 +436,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .sobre-desc strong { color: var(--color-text); }
 
-/* Pilares do método */
 .sobre-pilares {
   margin: var(--space-lg) 0;
   display: flex;
@@ -529,7 +465,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .pilar strong { display: block; color: var(--color-text); font-size: 0.95rem; margin-bottom: 0.2rem; }
 .pilar p { font-size: 0.85rem; color: var(--color-text-faint); }
 
-/* Visual card */
 .sobre-visual { display: flex; justify-content: center; }
 
 .visual-card {
@@ -606,11 +541,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--color-text-faint);
   margin-top: var(--space-sm);
 }
-
-
-/* ----------------------------------------------------------------
-   8. BENEFÍCIOS
----------------------------------------------------------------- */
 .beneficios {
   padding: var(--space-2xl) 0;
   background: var(--color-bg-3);
@@ -663,10 +593,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   line-height: 1.65;
 }
 
-
-/* ----------------------------------------------------------------
-   9. DEPOIMENTOS
----------------------------------------------------------------- */
 .depoimentos {
   padding: var(--space-2xl) 0;
   background: var(--color-bg-2);
@@ -737,7 +663,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .depo-author strong { display: block; font-size: 0.9rem; color: var(--color-text); }
 .depo-author span { font-size: 0.78rem; color: var(--color-text-faint); }
 
-/* Credibilidade */
 .credibilidade {
   text-align: center;
   border-top: 1px solid var(--color-border);
@@ -762,10 +687,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   letter-spacing: 0.03em;
 }
 
-
-/* ----------------------------------------------------------------
-   10. FORMULÁRIO DE CAPTAÇÃO
----------------------------------------------------------------- */
 .formulario-section {
   padding: var(--space-2xl) 0;
   background: var(--color-bg);
@@ -793,7 +714,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   box-shadow: var(--shadow-card), var(--shadow-glow);
 }
 
-/* Lado esquerdo: copy */
 .form-title {
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 3vw, 2.6rem);
@@ -839,7 +759,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .form-urgencia svg { width: 15px; height: 15px; color: var(--color-gold); flex-shrink: 0; margin-top: 2px; }
 .form-urgencia p { font-size: 0.82rem; color: var(--color-text-muted); line-height: 1.5; }
 
-/* Lado direito: formulário */
 .form-container {
   background: var(--color-bg-3);
   border-radius: var(--radius-md);
@@ -858,7 +777,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin-bottom: 0.4rem;
 }
 
-/* Wrap com ícone */
 .input-wrap {
   position: relative;
 }
@@ -893,7 +811,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .input-wrap input:focus + svg,
 .input-wrap:focus-within svg { color: var(--color-gold); }
 
-/* Estado de erro */
 .input-wrap input.error { border-color: #e05555; }
 .form-error {
   display: block;
@@ -903,7 +820,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   min-height: 1rem;
 }
 
-/* Botão submit */
 .btn-submit {
   width: 100%;
   justify-content: center;
@@ -924,8 +840,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   box-shadow: 0 6px 24px rgba(201,168,76,0.3);
 }
 .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-
-/* Controle de loading no botão */
 .btn-loading { display: none; }
 .btn-submit.loading .btn-text { display: none; }
 .btn-submit.loading .btn-loading { display: inline; }
@@ -942,7 +856,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .form-privacy svg { width: 12px; height: 12px; }
 
-/* Mensagem de sucesso */
 .form-success {
   display: none;
   text-align: center;
@@ -970,11 +883,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .form-success p { color: var(--color-text-muted); font-size: 0.9rem; }
 .success-sub { margin-top: 0.5rem; color: var(--color-text-faint); font-size: 0.82rem; }
-
-
-/* ----------------------------------------------------------------
-   11. CTA FINAL
----------------------------------------------------------------- */
 .cta-final {
   padding: var(--space-2xl) 0;
   background: var(--color-bg-3);
@@ -1008,11 +916,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--color-text-muted);
   margin-bottom: var(--space-lg);
 }
-
-
-/* ----------------------------------------------------------------
-   12. RODAPÉ
----------------------------------------------------------------- */
 .footer {
   padding: var(--space-lg) 0;
   background: var(--color-bg);
@@ -1036,11 +939,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .footer-bottom p { font-size: 0.78rem; color: var(--color-text-faint); }
 .footer-disc { max-width: 500px; text-align: right; }
-
-
-/* ----------------------------------------------------------------
-   13. BOTÃO FLUTUANTE WHATSAPP
----------------------------------------------------------------- */
 .whatsapp-float {
   position: fixed;
   bottom: 2rem;
@@ -1058,7 +956,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   opacity: 0;
   transform: scale(0.8);
 }
-/* Aparece após scroll (JS) */
 .whatsapp-float.visible {
   opacity: 1;
   transform: scale(1);
@@ -1068,8 +965,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transform: scale(1.08);
   box-shadow: 0 6px 28px rgba(37,211,102,0.45);
 }
-
-/* Tooltip */
 .wpp-tooltip {
   position: absolute;
   right: calc(100% + 12px);
@@ -1089,11 +984,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   opacity: 1;
   transform: translateX(0);
 }
-
-
-/* ----------------------------------------------------------------
-   14. RESPONSIVIDADE — MOBILE
----------------------------------------------------------------- */
 @media (max-width: 1024px) {
   .beneficios-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1111,38 +1001,28 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     --space-xl: 3rem;
     --space-2xl: 4.5rem;
   }
-
-  /* Navbar */
   .nav-links { display: none; }
   .nav-toggle { display: flex; }
-
-  /* Hero */
   .hero { padding: 100px 0 60px; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
   .hero-stats { gap: var(--space-md); }
   .stat-divider { display: none; }
 
-  /* Benefícios */
   .beneficios-grid { grid-template-columns: 1fr; }
 
-  /* Depoimentos */
   .depoimentos-grid {
     grid-template-columns: 1fr;
   }
 
-  /* Formulário */
   .form-wrapper {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
     padding: var(--space-lg);
   }
 
-  /* Footer */
   .footer-top { flex-direction: column; align-items: flex-start; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
   .footer-disc { text-align: left; }
-
-  /* WhatsApp */
   .whatsapp-float { bottom: 1.25rem; right: 1.25rem; }
 }
 
